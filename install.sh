@@ -53,7 +53,6 @@ lnif() {
 
 echo "Step1: backing up current vim config"
 today=`date +%Y%m%d`
-<<<<<<< HEAD
 if $FOR_VIM; then
     for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$today; done
     for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -L $i ] && unlink $i ; done
@@ -73,17 +72,6 @@ if $FOR_NEOVIM; then
     lnif "$CURRENT_DIR/" "$HOME/.config/nvim"
     lnif $CURRENT_DIR/vimrc $CURRENT_DIR/init.vim
 fi
-=======
-for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$today; done
-for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc $HOME/.vimrc.bundles; do [ -L $i ] && unlink $i ; done
-
-
-echo "Step2: setting up symlinks"
-lnif $CURRENT_DIR/vimrc $HOME/.vimrc
-lnif $CURRENT_DIR/vimrc.bundles $HOME/.vimrc.bundles
-lnif "$CURRENT_DIR/" "$HOME/.vim"
-
->>>>>>> add
 
 echo "Step3: update/install plugins using Vim-plug"
 system_shell=$SHELL
