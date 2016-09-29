@@ -520,17 +520,15 @@ function! s:lod_map(map, names, with_prefix, prefix)
     let extra .= nr2char(c)
   endwhile
 
-  if a:with_prefix
-    let prefix = v:count ? v:count : ''
-    let prefix .= '"'.v:register.a:prefix
-    if mode(1) == 'no'
-      if v:operator == 'c'
-        let prefix = "\<esc>" . prefix
-      endif
-      let prefix .= v:operator
+  let prefix = v:count ? v:count : ''
+  let prefix .= '"'.v:register.a:prefix
+  if mode(1) == 'no'
+    if v:operator == 'c'
+      let prefix = "\<esc>" . prefix
     endif
-    call feedkeys(prefix, 'n')
+    let prefix .= v:operator
   endif
+  call feedkeys(prefix, 'n')
   call feedkeys(substitute(a:map, '^<Plug>', "\<Plug>", '') . extra)
 endfunction
 
