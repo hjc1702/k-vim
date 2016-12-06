@@ -97,7 +97,11 @@ let s:plug_tab = get(s:, 'plug_tab', -1)
 let s:plug_buf = get(s:, 'plug_buf', -1)
 let s:mac_gui = has('gui_macvim') && has('gui_running')
 let s:is_win = has('win32') || has('win64')
+<<<<<<< HEAD
 let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)
+=======
+let s:nvim = has('nvim') && exists('*jobwait') && !s:is_win
+>>>>>>> update
 let s:vim8 = has('patch-8.0.0039') && exists('*job_start')
 let s:me = resolve(expand('<sfile>:p'))
 let s:base_spec = { 'branch': 'master', 'frozen': 0 }
@@ -520,15 +524,17 @@ function! s:lod_map(map, names, with_prefix, prefix)
     let extra .= nr2char(c)
   endwhile
 
-  let prefix = v:count ? v:count : ''
-  let prefix .= '"'.v:register.a:prefix
-  if mode(1) == 'no'
-    if v:operator == 'c'
-      let prefix = "\<esc>" . prefix
+  if a:with_prefix
+    let prefix = v:count ? v:count : ''
+    let prefix .= '"'.v:register.a:prefix
+    if mode(1) == 'no'
+      if v:operator == 'c'
+        let prefix = "\<esc>" . prefix
+      endif
+      let prefix .= v:operator
     endif
-    let prefix .= v:operator
+    call feedkeys(prefix, 'n')
   endif
-  call feedkeys(prefix, 'n')
   call feedkeys(substitute(a:map, '^<Plug>', "\<Plug>", '') . extra)
 endfunction
 
@@ -1034,7 +1040,7 @@ function! s:update_impl(pull, force, args) abort
     endtry
   else
     call s:update_vim()
-    while use_job && sync
+    while use_job && has('vim_starting')
       sleep 100m
       if s:update.fin
         break

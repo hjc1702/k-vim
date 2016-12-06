@@ -730,3 +730,4 @@ set rtp+=/usr/local/opt/fzf
 " vue相关
 " autocmd BufRead,BufNewFile *.vue set filetype=html.vue
 autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd! CompleteDone * set imdisable|set iminsert=0 "for macvim"
