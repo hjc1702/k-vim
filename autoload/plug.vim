@@ -98,9 +98,13 @@ let s:plug_buf = get(s:, 'plug_buf', -1)
 let s:mac_gui = has('gui_macvim') && has('gui_running')
 let s:is_win = has('win32') || has('win64')
 <<<<<<< HEAD
+<<<<<<< HEAD
 let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)
 =======
 let s:nvim = has('nvim') && exists('*jobwait') && !s:is_win
+>>>>>>> update
+=======
+let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)
 >>>>>>> update
 let s:vim8 = has('patch-8.0.0039') && exists('*job_start')
 let s:me = resolve(expand('<sfile>:p'))
