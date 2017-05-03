@@ -27,9 +27,16 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+" Plug 'kiteco/vim-plugin'
+Plug 'sophacles/vim-bundle-mako'
 Plug 'derekwyatt/vim-scala'
 Plug 'posva/vim-vue'
 Plug 'mbra/Prettysql'
+Plug 'solarnz/thrift.vim'
+Plug 'fisadev/vim-isort'
+Plug 'Chiel92/vim-autoformat'
+" Plug 'Yggdroot/indentLine'
+
 
 " 移动光标到插件名上, 使用'#'快速跳转到每个插件的配置处
 
@@ -144,6 +151,7 @@ Plug 'tomasr/molokai'
 " nav
 " nerdtree nerdtreetabs
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 " tagbar
