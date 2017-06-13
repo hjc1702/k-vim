@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'coffeescript']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'coffeescript', 'golang']
 endif
 
 " ----------------------------------------------------------------------------
@@ -835,7 +835,7 @@ call plug#end()
 " beta {{{
     " python code format
     " format all file
-    autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+    autocmd FileType python nnoremap <leader>a :0,$!yapf<Cr>
     " format select block
     " autocmd FileType python vnoremap <leader>y :!yapf<Cr>
 
