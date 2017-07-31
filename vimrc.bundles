@@ -33,7 +33,6 @@ Plug 'derekwyatt/vim-scala'
 Plug 'posva/vim-vue'
 Plug 'mbra/Prettysql'
 Plug 'solarnz/thrift.vim'
-Plug 'fisadev/vim-isort'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'Yggdroot/indentLine'
 
@@ -837,12 +836,12 @@ call plug#end()
     " format all file
     autocmd FileType python nnoremap <leader>a :0,$!yapf<Cr>
     " format select block
-    " autocmd FileType python vnoremap <leader>y :!yapf<Cr>
+    autocmd FileType python vnoremap <leader>y :!yapf<Cr>
 
     " Plug 'mindriot101/vim-yapf'
-    " scriptencoding utf-8
+    scriptencoding utf-8
     " let g:yapf_style = "google"
-    " let g:yapf_style = "pep8"
+    let g:yapf_style = "pep8"
     " setenv PYTHONIOENCODING UTF-8
     " nnoremap <leader>y :call Yapf()<cr>
 " }}}
