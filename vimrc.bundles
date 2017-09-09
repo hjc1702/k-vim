@@ -27,6 +27,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'liuchengxu/space-vim-dark'
 " Plug 'kiteco/vim-plugin'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'derekwyatt/vim-scala'
@@ -35,6 +36,8 @@ Plug 'mbra/Prettysql'
 Plug 'solarnz/thrift.vim'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'Yggdroot/indentLine'
+Plug 'hotoo/pangu.vim'
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 
 " 移动光标到插件名上, 使用'#'快速跳转到每个插件的配置处
