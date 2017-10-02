@@ -37,6 +37,7 @@ Plug 'solarnz/thrift.vim'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'Yggdroot/indentLine'
 Plug 'hotoo/pangu.vim'
+Plug 'sheerun/vim-polyglot'
 autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
 
 
