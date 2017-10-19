@@ -729,3 +729,5 @@ endfunction
 
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
+" vmap <leader>c y:call system("pbcopy", getreg("\""))<CR>
+" nmap <leader>v :call setreg("\"",system("pbpaste"))<CR>p

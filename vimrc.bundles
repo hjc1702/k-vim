@@ -27,7 +27,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'liuchengxu/space-vim-dark'
 " Plug 'kiteco/vim-plugin'
 Plug 'sophacles/vim-bundle-mako'
 Plug 'derekwyatt/vim-scala'
